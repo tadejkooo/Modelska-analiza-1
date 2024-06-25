@@ -1,0 +1,17 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Uvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Zanimivo telo}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Masa telesa}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Konstantna gostota}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Gostota odvisna od radija}{2}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Vztrajnostni moment}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Konstantna gostota}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Gostita odvisna od radija}{3}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Težišče}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Transmisivnost krogle}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Prosta pot enaka kot radij krogle}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Različne proste poti}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Model nevtronskega reflektorja}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Povprečna prosta pot je polovica debeline plošče}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Spreminjamo povprečno prosto pot}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Zaključek}{9}{section.5}%
