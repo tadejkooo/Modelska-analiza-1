@@ -1,0 +1,14 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Uvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Model epidemije}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Začetni model}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Model z več stadiji bolezni}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Primerjava začetnega modela in modela z večimi sadiji}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Model zajci-lisice}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Testiranje metod}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fazni diagram}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Zastojne točke}{10}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Populacijski model laserja}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Fazni diagram}{12}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Frekvenca in karakteristični čas oscilacij}{12}{section.5}%
+\contentsline {section}{\numberline {6}Zaključek}{13}{section.6}%
