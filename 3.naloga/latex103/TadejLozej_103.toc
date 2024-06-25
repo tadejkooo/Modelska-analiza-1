@@ -1,0 +1,11 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Uvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Tompsonov problem}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Sfera}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Sfera v kondenzatorju}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Krog}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Torus}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Elipsoid}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Primerjava teles in likov}{9}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Problem optimalne vožnje}{10}{section.3}%
+\contentsline {section}{\numberline {4}Zaključek}{12}{section.4}%
