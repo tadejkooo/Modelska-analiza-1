@@ -1,0 +1,10 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Uvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Frekvenčni spekter}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Manj točk signala}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Wienerjev filter}{9}{section.3}%
+\contentsline {section}{\numberline {4}Lena}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Prvo konvolucijsko jedro}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Drugo konvolucijsko jedro}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Tretje konvolucijsko jedro}{12}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Zaključek}{13}{section.5}%
