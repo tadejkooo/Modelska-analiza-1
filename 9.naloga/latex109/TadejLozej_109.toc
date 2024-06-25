@@ -1,0 +1,8 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Uvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Statistika časov izumrtja}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Smrti in rojstva}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Matrika prehodov}{6}{section.3}%
+\contentsline {section}{\numberline {4}Zajci-Lisice}{7}{section.4}%
+\contentsline {section}{\numberline {5}Epidemija}{9}{section.5}%
+\contentsline {section}{\numberline {6}Zaključek}{10}{section.6}%
