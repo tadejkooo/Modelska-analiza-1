@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  12 OCT 2023 20:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  7 OCT 2024 13:39
 entering extended mode
 **./TadejLozej_101.tex
 (TadejLozej_101.tex
@@ -591,7 +591,7 @@ Package rerunfilecheck Info: File `TadejLozej_101.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  8787 strings out of 480236
- 140914 string characters out of 2880557
+ 140928 string characters out of 2880557
  465931 words of memory out of 3000000
  25124 multiletter control sequences out of 15000+200000
  540850 words of font info for 49 fonts, out of 3000000 for 9000
@@ -613,7 +613,7 @@ C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
 msfonts/cm/cmsy10.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy6.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on TadejLozej_101.pdf (11 pages, 913158 bytes).
+Output written on TadejLozej_101.pdf (11 pages, 913096 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
