@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  10 JAN 2024 13:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  12 JAN 2025 12:38
 entering extended mode
 **./TadejLozej_111.tex
 (TadejLozej_111.tex
@@ -567,7 +567,7 @@ een already used, duplicate ignored
                    \relax 
 l.35 \newpage
               [2]
-<slika1.png, id=37, 752.3307pt x 624.4128pt>
+<slika1.png, id=42, 752.3307pt x 624.4128pt>
 File: slika1.png Graphic file (type png)
 <use slika1.png>
 Package pdftex.def Info: slika1.png  used on input line 68.
@@ -577,7 +577,7 @@ Package pdftex.def Info: slika1.png  used on input line 68.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1]
-<slika2.png, id=55, 768.9528pt x 902.6523pt>
+<slika2.png, id=60, 768.9528pt x 902.6523pt>
 File: slika2.png Graphic file (type png)
 <use slika2.png>
 Package pdftex.def Info: slika2.png  used on input line 88.
@@ -586,7 +586,7 @@ Package pdftex.def Info: slika2.png  used on input line 88.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slika3.png, id=56, 737.154pt x 625.8582pt>
+<slika3.png, id=61, 737.154pt x 625.8582pt>
 File: slika3.png Graphic file (type png)
 <use slika3.png>
 Package pdftex.def Info: slika3.png  used on input line 96.
@@ -595,7 +595,7 @@ Package pdftex.def Info: slika3.png  used on input line 96.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <./slika1.png>]
-<slika4.png, id=63, 631.6398pt x 349.0641pt>
+<slika4.png, id=68, 631.6398pt x 349.0641pt>
 File: slika4.png Graphic file (type png)
 <use slika4.png>
 Package pdftex.def Info: slika4.png  used on input line 104.
@@ -605,7 +605,7 @@ Package pdftex.def Info: slika4.png  used on input line 104.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./slika2.png>]
-<slika5.png, id=70, 626.5809pt x 346.1733pt>
+<slika5.png, id=75, 626.5809pt x 346.1733pt>
 File: slika5.png Graphic file (type png)
 <use slika5.png>
 Package pdftex.def Info: slika5.png  used on input line 112.
@@ -615,12 +615,12 @@ Package pdftex.def Info: slika5.png  used on input line 112.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./slika3.png> <./slika4.png>] [5 <./slika5.png>]
-<slika6.png, id=87, 843.3909pt x 795.6927pt>
+<slika6.png, id=92, 843.3909pt x 795.6927pt>
 File: slika6.png Graphic file (type png)
 <use slika6.png>
 Package pdftex.def Info: slika6.png  used on input line 127.
 (pdftex.def)             Requested size: 398.33858pt x 375.80896pt.
-<slika7.png, id=88, 768.9528pt x 902.6523pt>
+<slika7.png, id=93, 768.9528pt x 902.6523pt>
 File: slika7.png Graphic file (type png)
 <use slika7.png>
 Package pdftex.def Info: slika7.png  used on input line 138.
@@ -629,7 +629,7 @@ Package pdftex.def Info: slika7.png  used on input line 138.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slika8.png, id=89, 737.154pt x 625.8582pt>
+<slika8.png, id=94, 737.154pt x 625.8582pt>
 File: slika8.png Graphic file (type png)
 <use slika8.png>
 Package pdftex.def Info: slika8.png  used on input line 147.
@@ -638,7 +638,7 @@ Package pdftex.def Info: slika8.png  used on input line 147.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slika9.png, id=96, 626.5809pt x 346.1733pt>
+<slika9.png, id=101, 626.5809pt x 346.1733pt>
 File: slika9.png Graphic file (type png)
 <use slika9.png>
 Package pdftex.def Info: slika9.png  used on input line 155.
@@ -647,12 +647,12 @@ Package pdftex.def Info: slika9.png  used on input line 155.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7 <./slika7.png>] [8 <./slika8.png> <./slika9.png>]
-<slika10.png, id=111, 734.2632pt x 628.749pt>
+<slika10.png, id=116, 734.2632pt x 628.749pt>
 File: slika10.png Graphic file (type png)
 <use slika10.png>
 Package pdftex.def Info: slika10.png  used on input line 165.
 (pdftex.def)             Requested size: 341.43306pt x 292.36525pt.
-<slika11.png, id=112, 768.9528pt x 902.6523pt>
+<slika11.png, id=117, 768.9528pt x 902.6523pt>
 File: slika11.png Graphic file (type png)
 <use slika11.png>
 Package pdftex.def Info: slika11.png  used on input line 191.
@@ -661,7 +661,7 @@ Package pdftex.def Info: slika11.png  used on input line 191.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slika12.png, id=113, 745.1037pt x 625.8582pt>
+<slika12.png, id=118, 745.1037pt x 625.8582pt>
 File: slika12.png Graphic file (type png)
 <use slika12.png>
 Package pdftex.def Info: slika12.png  used on input line 199.
@@ -669,7 +669,7 @@ Package pdftex.def Info: slika12.png  used on input line 199.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slika13.png, id=114, 626.5809pt x 346.1733pt>
+<slika13.png, id=119, 626.5809pt x 346.1733pt>
 File: slika13.png Graphic file (type png)
 <use slika13.png>
 Package pdftex.def Info: slika13.png  used on input line 207.
@@ -684,20 +684,14 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 [9 <./slika10.png>] [10 <./slika11.png>] [11 <./slika12.png> <./slika13.png>]
 (TadejLozej_111.aux)
-
-Package rerunfilecheck Warning: File `TadejLozej_111.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TadejLozej_111.out':
-(rerunfilecheck)             Before: D2CB2229DD92166712AC8FC183E9A30F;329
-(rerunfilecheck)             After:  8581E47AF2ED8397FC2D4B1A420F92F2;373.
+Package rerunfilecheck Info: File `TadejLozej_111.out' has not changed.
+(rerunfilecheck)             Checksum: 8581E47AF2ED8397FC2D4B1A420F92F2;373.
  ) 
 Here is how much of TeX's memory you used:
- 9748 strings out of 480236
- 163175 string characters out of 2880557
+ 9749 strings out of 480236
+ 163200 string characters out of 2880557
  511161 words of memory out of 3000000
- 26074 multiletter control sequences out of 15000+200000
+ 26075 multiletter control sequences out of 15000+200000
  541325 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,68p,1601b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -715,9 +709,9 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
 10.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb>
-Output written on TadejLozej_111.pdf (13 pages, 2203809 bytes).
+Output written on TadejLozej_111.pdf (13 pages, 2205277 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
+ 192 PDF objects out of 1000 (max. 8388607)
  39 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

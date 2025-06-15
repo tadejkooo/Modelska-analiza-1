@@ -1,0 +1,261 @@
+\documentclass[slovene,11pt,a4paper]{article}
+\usepackage[margin=1.8cm,bottom=3cm,foot=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{geometry}
+\usepackage{changepage}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\usepackage[slovene]{babel}
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{\centering Contents}
+
+\begin{document}
+
+\title{12. naloga - Metoda maksimalne entropije in linearna napoved}
+\author{Tadej Lozej 28242023}
+\maketitle
+\begin{center}
+Modelska analiza 1 \\
+\bigskip
+Predavatelj: prof. dr. Simon Širca \\
+Asistent: doc. dr. Miha Mihovilovič
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+
+\pagenumbering{arabic}
+
+Pri analizi časovnih vrst oz. signalov odvisnih od časa lahko, za razliko od recimo Fourierove transformacije, frekvenčni spekter le-teh določimo s tako imenovano metodo maksimalne entropije.
+
+Iz signala $s_n$ lahko z linearno napovedjo napovemo nadaljni signal $\tilde{s}_n$ kot
+
+\begin{equation}
+\tilde{s}_n = - \sum_{k=1}^p a_k s_{n-k},
+\end{equation}
+kjer so $a_k$ koeficienti v linearni napovedi in $p$ izbrano število parametrov sistema. Rečemo mu tudi red filtra. Ta parameter v resnici odloča koliko preteklih točk bomo upoštevali za napoved nove točke v času. Koeficiente $a_k$ določimo z minimizacijo napake
+
+\begin{equation}
+\varepsilon = E[e_n^2] = E[(s_n + \sum_{k=1}^p a_k s_{n-k})^2].
+\end{equation}
+Ta minimizacija vodi do Yule-Walkerjevih enačb za določitev koeficientov $a_k$. Rešiti moramo matrični sistem
+
+\begin{equation}
+\begin{bmatrix}
+R(0) & R(1) & \cdots & R(p-1) \\
+R(1) & R(0) & \cdots & R(p-2) \\
+\vdots & \vdots & \ddots & \vdots \\
+R(p-1) & R(p-2) & \cdots & R(0)
+\end{bmatrix}
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_p
+\end{bmatrix}
+=
+-
+\begin{bmatrix}
+R(1) \\
+R(2) \\
+\vdots \\
+R(p)
+\end{bmatrix},
+\end{equation}
+kjer je $R$ avtokorelacijska funkcija definirana kot
+
+\begin{equation}
+R(k) = \frac{1}{N-k} \sum_{n=0}^N s_n s_{n-k}.
+\end{equation}
+Matrika v enačbi (3) je Toeplitzova in obstajajo algoritmo za reševanje matričnih enačb, ki to v prid upoštevajo. Ko izračunamo koeficiente $a_k$ lahko napovemo prihodnji signal po enačbi (1). Prav tako pa lahko ocenimo spekter kot
+
+\begin{equation}
+P(\omega) = \frac{G^2}{|1 + \sum_{k=1}^p a_k e^{-i \omega k}|^2},
+\end{equation}
+kjer je $G^2$ minimum napake izračunan kot
+
+\begin{equation}
+G^2 = R(0) + \sum_{k=1}^p a_k R(k).
+\end{equation}
+
+Naša naloga je določiti frekvenčni spekter iz že znanih datotek \texttt{val2.dat} ter \texttt{val3.dat} in iz datoteke \texttt{co2.dat}, v kateri so podatki o koncentraciji ogljikovega dioksida v atmosferi v zadnjih letih. Matodo bomo prav tako testirali na testnem signalu sestavljenem iz vsote dveh sinusov. Preiskusili se bomo tudi v napovedi signala z datotekami \texttt{borza.dat}, \texttt{luna.dat} in \texttt{Wolf\_number.dat}. Na slednjih so signali o cenah na borzi, luninih efemeridah in sončevi aktivnosti.
+
+\section{Spektri datotek val2.dat, val3.dat in co2.dat}
+
+\subsection{val2.dat in val3.dat}
+
+Podana imamo signala \texttt{val2.dat} in \texttt{val3.dat}. Oba signala predstavljata vsoto sinusov. Lahko ju vidimo na sliki 1. V signalih lahko opazimo neko periodičnost. Opazimo tudi, da ima prvi signal manjšo amplitudo kot drugi.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika1.png}
+\caption{Signala iz datotek \texttt{val2.dat} (zgoraj z modro črto) in \texttt{val3.dat} (spodaj z oranžno črto). Oba predstavljata vsoto sinusov.}
+\end{figure}
+
+Signala analiziramo in narišemo par frekvenčnih spektrov. Na sliki 2 lahko vidimo nekaj različnih frekvenčnih spektrov za signala iz datotek \texttt{val2.dat} in \texttt{val3.dat}. Frekvenčne spektre smo izračunali s pomočjo diskretne Fourierjeve transformacije brez okna, z Welch oknom ter po metodi maksimalne entropije za nekaj različnih redov filtra $p$. Spektra dobljena z diskretno Fourierjevo transformacijo že poznamo iz naloge 10. Vidimo, da je prvi signal zašumljen, drugi pa ne. Posledično je pri drugem očitna razlika med tem ali okno uporabimo ali ne, medtem ko pri je pri prvem ni. Če pri zgornjem grafu primerjamo uporabo Fourierjeve transformacije z metodo maksimalne entropije vidimo, da so spektri dobljeni z drugo omenjeno metodo precej bolj gladki. Šum je precej zglajen. Prikazal sem spektre z redom filtra $p=$ 3, 4 in 14. Pri filtru reda 3 ne razločimo še dveh vrhov. Potrebujemo vsaj filter reda 4. Pri filtru višjega reda pa sta vrhova že precej ozka. Na spodnjem grefu vidimo, da je drugi signal je sestavljen iz štirih različnih frekvenc. Tukaj sem prikazal spektre z redi filtra $p=$ 3, 6 in 9. Vidimo, da filter reda 3 ni ujel nobene prave frekvence, spekter pridobljen s filtrom reda 6 ima tri izrazite vrhove in spekter, ki smo ga dobili s filtrom reda 9 ima vse štiri vrhove. Spektrov pridobljenih s filtri višjega reda nisem prikazal, saj ti niso bili stabilni, ker so imeli pole izven enotske krožnice v kompleksni ravnini.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika2.png}
+\caption{Frekvenčni spektri signalov iz datotek \texttt{val2.dat} (zgoraj) in \texttt{val3.dat} (spodaj) pridobljeni z diskretno Fourierovo transformacijo brez okna, z Welch oknom ter po metodi maksimalne entropije za nekaj različnih redov filtra $p$.}
+\end{figure}
+
+Poli filtrov uporabljenih za izračun spektrov na sliki 2 so prikazani na sliki 3. Prenosna funkcija filtra je
+
+\begin{equation}
+H(z) = \frac{G}{1 + \sum_{k=1}^p a_k z^{-k}}.
+\end{equation}
+Filter je stabilen, če njegovi poli ležijo znotraj enotske krožnice v kompleksni ravnini. Vidimo, da vsi poli naših filtrov ležijo znotraj te krožnice oz. imajo absolutno vrednost manjšo od 1. Če bi slučajno kateri izmed polov ležal izven krožnice, bi ga lahko preslikali v krožnico in nato znova izračunali koeficiente $a_k$ ampak se s tem nisem ukvarjal in sem raje že v začetku poiskal filtre, katerih poli ležijo znotraj krožnice.
+
+\newpage
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika3.png}
+\caption{Poli filtrov s katerimi smo dobili frekvenčne spektre na sliki 2. Levo so poli filtrov, ki smo jih uporabili na datoteki \texttt{val2.dat}. Desno so poli filtrov, ki smo jih uporabili na datoteki \texttt{val3.dat}. Vsi poli se nahajajo znotraj enotske krožnice v kompleksni ravnini kar pomeni, da so filtri stabilni.}
+\end{figure}
+
+\subsection{co2.dat}
+
+Naslednji signal katerega spekter bomo analizirali je koncentracija ogljikovega dioksida v atmosferi skozi zadnja leta. V datoteki na nekaj časovnih značkah podatek o koncentraciji manjka. Ti manjkajoči podatki se nahajajo na začetku časovne vrste. Odločil sem se preprosto odrezati prvih 82 vrstic podatkov in se tako problemu manjkajočih podatkov enostavno izognil. S tem mislim, da nisem preveč škodil analizi, saj je podatkov vseeno precej veliko. Odrezal sem jih približno desetino. Koncentracija je prikazana v enotah ppm (parts per million) čas pa v letih. Vidimo zelo očiten naraščajoč trend, ki ga bo linearna napoved zelo težko ujela, saj težko ujame trende oz neke neperiodične dele signala. Dobra ideja je, da od signala takšne narave odštejemo takšen neperiodični trend. V tem primeru sem poskušal z linearnim in eksponentnim trendom. Na zgornjem grafu je z modro črto prikazana koncentracija ogljikovega dioksida skozi čas z oranžno je prikazana prilagojena eksponentna funkcija z zeleno pa prilagojena linearna funkcija. Vrednosti parametrov funkcij so v legendi. Na prvi pogled izgleda, da se bolje prilega eksponentni trend. Na spodnjem grafu lahko vidimo kvadrat razlike med meritvami koncentracije plina in eksponentnim (oranžna črta) oziroma linearnim (zelena črta) trendom. Tako lahko še očitneje vidimo, da so razlike z eksponentnim trendom manjše. S črtkano črto je prikazano povprečje kvadrata razlike (MSE - mean square error). Vidimo, da je MSE za eksponentni trend manjši.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika4.png}
+\caption{Zgornji graf z modro črto prikazuje koncentracijo ogljikovega dioksida skozi čas iz datoteke \texttt{co2.dat}. Z oranžno in zeleno črto sta narisana prilagojen eksponentni in linearni trend. Na spodnjem grafu so prikazani kvadrati razlik med meritvami in trendoma. S črtkano črto je prikazano povprečje kvadrata razlike.}
+\end{figure}
+
+Na sliki 5 je z modro črto prikazana koncentracija ogljikovega dioksida skozi čas z odštetim eksponentnim trendom. Vidimo, da je signal izgubil očiten naraščajoč trend in zgleda bolj periodičen. Tega bomo sedaj lahko bolj uspešno analizirali.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika5.png}
+\caption{Koncentracija ogljikovega dioksida skozi čas z odštetim eksponentnim trendom.}
+\end{figure}
+
+Frekvenčni spekteri signala s slike 5 so prikazani na sliki 6 za nekaj različnih redov filtra $p$. Vidimo, da filter reda 15 že lepo ujame tri vršne frekvence. Ko red filtra večamo pa so vrhovi vedno ožji in bolj izraziti. Prvi vrh se nahaja pri krožni frekvenci $\omega = 6,83 / \text{leto}$ kar moramo še deliti z $2\pi$, da dobimo $\nu = 1,09 / \text{leto}$, kar lahko vidimo tudi na sliki 5. Presenečajo me vrhovi pri večjih frekvencah, saj te na sliki 5 res niso očitne. Mogoče sem narobe določil frekvenčno skalo.
+
+\newpage
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika6.png}
+\caption{Frekvenčni spektri signalov iz datotek \texttt{val2.dat} (zgoraj) in \texttt{val3.dat} (spodaj) pridobljeni z diskretno Fourierovo transformacijo brez okna, z Welch oknom ter po metodi maksimalne entropije za nekaj različnih redov filtra $p$.}
+\end{figure}
+
+Podatke lahko izkoristimo tudi za poskus napovedi nadaljnega signala. Prvih 256 točk lahko vzamemo za izračun koeficientov linearne napovedi $a_k$ in preostanek meritev uporabimo za oceno natančnosti naše napovedi. Ko enkrat poznamo koeficiente $a_k$ lahko po enačbi (1) napovemo nadaljni signal. Napoved nadaljnega signala po 256 točkah je prikazana na sliki 7 za nekaj različnih redov filtra $p$. Vidimo, da imata reda 20 in 30 približno enako napoved, medtem ko red filtra 10 precej hitro izniha. Seveda je za napoved koncentracije v atmosferi tej napovedi treba prišteti še eksponentni trend.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika7.png}
+\caption{Napoved nadaljnih točk s filtri različnega reda $p$. Z modro črto so prikazane realizirane meritve z oranžno, zeleno in rdečo pa napovedi filtrov različnih redov.}
+\end{figure}
+
+\subsection{Testni signal}
+
+Testirajmo ločljivost metode tako, da sestavimo signal iz dveh sinusov z različnima frekvencama. Na sliki 8 levo je prikazan primer takega signala. Signal na sliki je vsota dveh sinusov. En ima krožno frekvenco $\omega_1 = 3$ drugi pa $\omega_2 = 7$. Signal je sestavljen iz 1000 enakomerno porazdeljenih točk na intervalu od 0 do 50. Na sliki 8 desno je prikazan frekvenčni spekter tega signala. Zato, da se vrhova nahajata manj kot 0,1 stran od dejanskih frekvenc s katerima je bil signal ustvarjen potrebujemo filter reda 11.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika8.png}
+\caption{Na sliki levo je prikazan testni signal vsote dveh sinusov s frekvencama $\omega_1 = 3$ in $\omega_2 = 7$. Desno je prikazan spekter tega signala pridobljen s filtrom reda 11. Vrhova sta od dejanskih vrednosti oddaljena manj kot 0,1.}
+\end{figure}
+
+Če frekvenco drugega signala $\omega_2$ oddaljujemo frekvenci $\omega_1$, vidimo, da potrebujemo filtre nižjega in nižjega reda, da določimo dva vrhova znotraj natančnosti $\pm 0.1$. Obratno če frekvenco drugega signala približujemo frekvenci prvega signala. Na sliki 9 vidimo minimalni red filtra, ki ga moramo vzeti, da vrhova v spektru določimo znotraj natančnosti $\pm 0,1$. Poleg nezašumljenega signala sem signal tudi zašumil z belim šumom različnih disperzij. Trend kaže na to, da večja kot je razlika med frekvencama manjši red filtra potrebujemo. Kot pričakovano je za določitev frekvenc iz zašumljenega signala potreben višji red filtra. Je pa zanimivo, da vsaj v tem primeru, minimalni red filtra $p$ ni odvisen od disperzije prištetega šuma.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika9.png}
+\caption{Minimalni red filtra $p$ potreben za določitev frekvenc $\omega_1$ in $\omega_2$ iz spektra nezašumljenega in treh z različnimi disperzijami zašumljenih signalov v odvisnosti od razlike dveh frekvenc.}
+\end{figure}
+
+\section{Linearna napoved}
+
+Od tukaj naprej sem implementiral tudi preslikovanje polov izven enotske krožnice v njo. To sem počel z zrcaljenjem polov čez krožnico. Kot smo si to ogledali že pri koncentraciji ogljikovega dioksida v atmosferi lahko koeficiente $a_k$ po enačbi (1) uporabimo za linearno napoved prihodnosti.
+
+\subsection{luna.dat}
+
+V datoteki \texttt{luna.dat} dobimo podatke za lunine efemeride. Podatki so merjeni vsak dan ob istem času. Gre za periodično gibanje, saj luna kroži okoli Zemlje. V datoteki se nahajajo podatki o rektascenziji in deklinaciji lune. Rektascenzija je kot, ki nam poda oddaljenost od vzhoda (kot $\phi$ v sferičnih koordinatah). Deklinacija je pa kot, ki nam poda oddaljenost nebesnega telesa od ekvatorja (koplementaren kot kotu $\theta$ v sferičnih koordinatah). Iz tega lahko izračunamo brezdimenzijske koordinate na katerih se nahaja luna vsak dan po enačbah
+
+\begin{align}
+\tilde{x} &= \frac{x}{R} = \cos(\text{DEC})\cos(\text{RA}) \\
+\tilde{y} &= \frac{y}{R} = \cos(\text{DEC})\sin(\text{RA}) \\
+\tilde{z} &= \frac{z}{R} = \sin(\text{DEC}),
+\end{align}
+kjer je $R$ oddaljenost lune od Zemlje, DEC deklinacija in RA rektascenzija. Na sliki 10 sta zgoraj prikazana rektascenzija v urah in deklinacija v stopinjah. Spodaj so pa prikazane brezdimenzijske koordinate $\tilde{x}$, $\tilde{y}$ in $\tilde{z}$. Prikazano je le eno leto gibanja lune. Jasno vidimo, da gre za periodično gibanje. Vse koordinate bi morale imeti periodo na približno 27,3 dni, saj je to dolžina sideralnega mesca.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika10.png}
+\caption{Zgoraj sta prikazana rektascenzija in deklinacija lune. Spodaj so pa prikazane brezdimenzijske koordinate telesa $\tilde{x}$, $\tilde{y}$ in $\tilde{z}$. Prikazano je eno leto gibanja.}
+\end{figure}
+
+Spodaj na sliki 11 vidimo pa vse podatke in datoteke \texttt{luna.dat}. To znaša šest let podatkov. V tej daljši časovni vrsti vidimo tudi precesijo lune. To gibanje ima precej večjo frekvenco kot njeno kroženje.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika11.png}
+\caption{Vseh pet let podatkov o položaju lune. Vidimo tudi pojav precesije.}
+\end{figure}
+
+Poglejmo sliko 12. Če poskusimo napovedati rektacsenzijo z linearno napovedjo pridemo zaradi žagastega signala do težav. Tudi za velike vrednosti $p$ je napoved precej slaba. Deklinacijo zaradi nihajoče narave bolje napovemo. Lahko bi predpostavili linearno odvisnost Rektascenzije od časa a se za to nisem odločil, saj s tem predpostavimo, da je v signalu le ena frekvenca.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika12.png}
+\caption{Poskus napovedi rektascenzije in deklinacije z filtri različnih redov.}
+\end{figure}
+
+Odločil sem se za napovedovanje posameznih koordinat. Te napovedi so za različne rede filtra prikazane na sliki 13. Vidimo, da s filtrom reda 30 precej dobro ujamemo amplitudo. Vprašal sem se tudi kako dobro ujamemo frekvenco a sem žal imem probleme pri ugotavljanju tega.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika13.png}
+\caption{Levo so napoved brezdimenzijskih koordinat lunes filtri različnih redov. Desno so poli filtrov.}
+\end{figure}
+
+Na sliki 14 so prikazana odstopanja napovedi v odvisnosti od časa desno in povprečno kvadrati odstopanja levo. Vidimo, da z večanjem reda filtra $p$ MSE pada. Napake se najverjetneje večajo, ker v napovedi nismo ujeli prave frekvence.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika14.png}
+\caption{Levo so odstopanja naših napovedi skozi čas. Desno so povprečni kvadrati odstopanja.}
+\end{figure}
+
+\subsection{Wolfnumber.dat}
+
+V datoteki \texttt{Wolfnumber.dat} imamo podatke o sončevi aktivnosti skozi leta. Podatkom odštejmo njihovo povprečje in prvih 2000 uporabimo za izračun koeficientov $a_k$ in preostale poskušajmo napovedati. Na sliki 15 se nahajajo naše napovedi za filtre različnih redov. Vidimo, da napoved ni precej dobra.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika15.png}
+\caption{Naše napovedi aktivnosti sonca skozi čas.}
+\end{figure}
+
+\subsection{Borza.dat}
+
+V datoteki \texttt{Borza.dat} imamo podatke o cenah delnice na borzi. Poskušajmo še to napovedati z našim modelom. Na sliki 16 se nahajajo napovedi za filtre različnih redov. Vidimo, da napovedi niso preveč dobre, saj je cena na borzi preveč naključen proces.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm]{slika16.png}
+\caption{Naše napovedi cene na borzi skozi čas.}
+\end{figure}
+
+\section{Zaključek}
+
+Na koncu sem malo pohitel, ker mi je zmanjkalo časa. Pri nalogi smo se naučili izračunati spekter signala z nečim drugim kot Fourierjevo transformacijo. Z metodo maksimalne entropije. Prav tako smo spoznali avtoregresivni model za napovedovanje prihodnosti.
+
+\end{document}

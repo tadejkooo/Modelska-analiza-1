@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  19 NOV 2023 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.24)  12 NOV 2024 10:17
 entering extended mode
 **./TadejLozej_105.tex
 (TadejLozej_105.tex
@@ -638,12 +638,18 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                removing `\textasciicaron' on input line 279.
 
 [13 <./ura2.png>] (TadejLozej_105.aux)
-Package rerunfilecheck Info: File `TadejLozej_105.out' has not changed.
-(rerunfilecheck)             Checksum: 7E054CE7B6A52D0C385DBC5FF424F6D1;552.
+
+Package rerunfilecheck Warning: File `TadejLozej_105.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TadejLozej_105.out':
+(rerunfilecheck)             Before: 94A1E28A287854794AE18B37C0199755;561
+(rerunfilecheck)             After:  7E054CE7B6A52D0C385DBC5FF424F6D1;552.
  ) 
 Here is how much of TeX's memory you used:
  9770 strings out of 480236
- 163478 string characters out of 2880557
+ 163492 string characters out of 2880557
  516161 words of memory out of 3000000
  26070 multiletter control sequences out of 15000+200000
  541325 words of font info for 51 fonts, out of 3000000 for 9000
@@ -663,7 +669,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
 10.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><C:/Users/Tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb>
-Output written on TadejLozej_105.pdf (15 pages, 1364002 bytes).
+Output written on TadejLozej_105.pdf (15 pages, 1363750 bytes).
 PDF statistics:
  242 PDF objects out of 1000 (max. 8388607)
  68 named destinations out of 1000 (max. 500000)

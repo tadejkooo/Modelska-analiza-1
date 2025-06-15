@@ -14,7 +14,7 @@
 #Monthly values are expressed in parts per million (ppm) and reported in the 2003A SIO manometric mole 
 #fraction scale.  The monthly values have been adjusted to the 15th of each month.  Missing values are 
 #denoted by -99.99. 
-
+year value
 1958 -99.99
 1958.08 -99.99
 1958.15 315.71
