@@ -1,0 +1,10 @@
+\babel@toc {slovene}{}\relax 
+\contentsline {section}{\numberline {1}Navodilo naloge}{1}{section.1}%
+\contentsline {section}{\numberline {2}Uvod}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Minimizacija doze v zdravem tkivu}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Maksimizacija doze v tumornem tkivu}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Model konstantnega curka}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Porazdelitev doz sevanja v 15 celičnem tumorju}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Obsevanost v odvisnosti od velikosti tumorja}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Model eksponentnega curka}{6}{section.4}%
+\contentsline {section}{\numberline {5}Protonska terapija}{6}{section.5}%
