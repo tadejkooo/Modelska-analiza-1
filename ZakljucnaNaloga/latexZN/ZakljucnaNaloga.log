@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.6)  11 AUG 2025 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.6)  13 AUG 2025 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,25 +580,25 @@ een already used, duplicate ignored
                    \relax 
 l.33 \newpage
               [2]
-<tumor.png, id=58, 375.804pt x 345.4506pt>
+<tumor.png, id=73, 375.804pt x 345.4506pt>
 File: tumor.png Graphic file (type png)
 <use tumor.png>
 Package pdftex.def Info: tumor.png  used on input line 45.
 (pdftex.def)             Requested size: 256.0748pt x 235.40405pt.
  [1 <./tumor.png>]
-<doze_sevanja_1.png, id=74, 472.6458pt x 345.4506pt>
+<doze_sevanja_1.png, id=89, 472.6458pt x 345.4506pt>
 File: doze_sevanja_1.png Graphic file (type png)
 <use doze_sevanja_1.png>
-Package pdftex.def Info: doze_sevanja_1.png  used on input line 108.
+Package pdftex.def Info: doze_sevanja_1.png  used on input line 114.
 (pdftex.def)             Requested size: 341.43306pt x 249.55708pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<doze_sevanja_2.png, id=75, 472.6458pt x 345.4506pt>
+<doze_sevanja_2.png, id=90, 472.6458pt x 345.4506pt>
 File: doze_sevanja_2.png Graphic file (type png)
 <use doze_sevanja_2.png>
-Package pdftex.def Info: doze_sevanja_2.png  used on input line 115.
+Package pdftex.def Info: doze_sevanja_2.png  used on input line 121.
 (pdftex.def)             Requested size: 341.43306pt x 249.55708pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -606,69 +606,136 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2]
-<nakljucni_tumorji.png, id=91, 987.2082pt x 231.264pt>
+[2] [3 <./doze_sevanja_1.png> <./doze_sevanja_2.png>]
+<nakljucni_tumorji.png, id=113, 987.2082pt x 231.264pt>
 File: nakljucni_tumorji.png Graphic file (type png)
 <use nakljucni_tumorji.png>
-Package pdftex.def Info: nakljucni_tumorji.png  used on input line 142.
+Package pdftex.def Info: nakljucni_tumorji.png  used on input line 150.
 (pdftex.def)             Requested size: 495.07779pt x 115.97752pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3 <./doze_sevanja_1.png> <./doze_sevanja_2.png>]
-<Porazdelitev_doz_zdravih_celic.png, id=103, 566.5968pt x 349.7868pt>
+<Porazdelitev_doz_zdravih_celic.png, id=118, 566.5968pt x 349.7868pt>
 File: Porazdelitev_doz_zdravih_celic.png Graphic file (type png)
 <use Porazdelitev_doz_zdravih_celic.png>
 Package pdftex.def Info: Porazdelitev_doz_zdravih_celic.png  used on input line
- 169.
+ 177.
 (pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Porazdelitev_doz_tumornih_celic.png, id=104, 566.5968pt x 349.7868pt>
+<Porazdelitev_doz_tumornih_celic.png, id=119, 566.5968pt x 349.7868pt>
 File: Porazdelitev_doz_tumornih_celic.png Graphic file (type png)
 <use Porazdelitev_doz_tumornih_celic.png>
 Package pdftex.def Info: Porazdelitev_doz_tumornih_celic.png  used on input lin
-e 176.
+e 184.
 (pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<primer_tumorja.png, id=105, 474.0912pt x 349.7868pt>
+<primer_tumorja.png, id=120, 474.0912pt x 349.7868pt>
 File: primer_tumorja.png Graphic file (type png)
 <use primer_tumorja.png>
-Package pdftex.def Info: primer_tumorja.png  used on input line 183.
+Package pdftex.def Info: primer_tumorja.png  used on input line 191.
 (pdftex.def)             Requested size: 341.43306pt x 251.92102pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./nakljucni_tumorji.png>] [5 <./Porazdelitev_doz_zdravih_celic.png> <./Pora
-zdelitev_doz_tumornih_celic.png>] [6 <./primer_tumorja.png>]
+zdelitev_doz_tumornih_celic.png>]
+<Zdrave_celice_povprecje_in_delezi.png, id=141, 566.5968pt x 349.7868pt>
+File: Zdrave_celice_povprecje_in_delezi.png Graphic file (type png)
+<use Zdrave_celice_povprecje_in_delezi.png>
+Package pdftex.def Info: Zdrave_celice_povprecje_in_delezi.png  used on input l
+ine 206.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Tumorske_celice_povprecje_in_delezi.png, id=142, 566.5968pt x 349.7868pt>
+File: Tumorske_celice_povprecje_in_delezi.png Graphic file (type png)
+<use Tumorske_celice_povprecje_in_delezi.png>
+Package pdftex.def Info: Tumorske_celice_povprecje_in_delezi.png  used on input
+ line 213.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./primer_tumorja.png>] [7 <./Zdrave_celice_povprecje_in_delezi.png> <./Tumo
+rske_celice_povprecje_in_delezi.png>]
+<doze_sevanja_1_exp.png, id=157, 474.0912pt x 349.7868pt>
+File: doze_sevanja_1_exp.png Graphic file (type png)
+<use doze_sevanja_1_exp.png>
+Package pdftex.def Info: doze_sevanja_1_exp.png  used on input line 241.
+(pdftex.def)             Requested size: 341.43306pt x 251.92102pt.
+<doze_sevanja_2_exp.png, id=158, 474.0912pt x 349.7868pt>
+File: doze_sevanja_2_exp.png Graphic file (type png)
+<use doze_sevanja_2_exp.png>
+Package pdftex.def Info: doze_sevanja_2_exp.png  used on input line 248.
+(pdftex.def)             Requested size: 341.43306pt x 251.92102pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./doze_sevanja_1_exp.png>]
+<Porazdelitev_doz_zdravih_celic_exp.png, id=174, 566.5968pt x 349.7868pt>
+File: Porazdelitev_doz_zdravih_celic_exp.png Graphic file (type png)
+<use Porazdelitev_doz_zdravih_celic_exp.png>
+Package pdftex.def Info: Porazdelitev_doz_zdravih_celic_exp.png  used on input 
+line 279.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Porazdelitev_doz_tumornih_celic_exp.png, id=175, 566.5968pt x 349.7868pt>
+File: Porazdelitev_doz_tumornih_celic_exp.png Graphic file (type png)
+<use Porazdelitev_doz_tumornih_celic_exp.png>
+Package pdftex.def Info: Porazdelitev_doz_tumornih_celic_exp.png  used on input
+ line 286.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Zdrave_celice_povprecje_in_delezi_exp.png, id=178, 566.5968pt x 349.7868pt>
+File: Zdrave_celice_povprecje_in_delezi_exp.png Graphic file (type png)
+<use Zdrave_celice_povprecje_in_delezi_exp.png>
+Package pdftex.def Info: Zdrave_celice_povprecje_in_delezi_exp.png  used on inp
+ut line 297.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Tumorske_celice_povprecje_in_delezi_exp.png, id=179, 566.5968pt x 349.7868pt>
+File: Tumorske_celice_povprecje_in_delezi_exp.png Graphic file (type png)
+<use Tumorske_celice_povprecje_in_delezi_exp.png>
+Package pdftex.def Info: Tumorske_celice_povprecje_in_delezi_exp.png  used on i
+nput line 304.
+(pdftex.def)             Requested size: 426.79134pt x 263.4763pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./doze_sevanja_2_exp.png>] [10 <./Porazdelitev_doz_zdravih_celic_exp.png> <
+./Porazdelitev_doz_tumornih_celic_exp.png>] [11 <./Zdrave_celice_povprecje_in_d
+elezi_exp.png> <./Tumorske_celice_povprecje_in_delezi_exp.png>]
 (ZakljucnaNaloga.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-Package rerunfilecheck Warning: File `ZakljucnaNaloga.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ZakljucnaNaloga.out':
-(rerunfilecheck)             Before: BAC83F423199D2972807E4A8B2D0AFB7;1449
-(rerunfilecheck)             After:  B1D7DCBDF64FC64ADD6005B82B3FDAD8;1741.
+Package rerunfilecheck Info: File `ZakljucnaNaloga.out' has not changed.
+(rerunfilecheck)             Checksum: B81E414F280789850E4A1933CDB62E09;2348.
  ) 
 Here is how much of TeX's memory you used:
- 13659 strings out of 474486
- 232248 string characters out of 5743756
- 1942542 words of memory out of 5000000
- 35731 multiletter control sequences out of 15000+600000
+ 13745 strings out of 474486
+ 235202 string characters out of 5743756
+ 1943542 words of memory out of 5000000
+ 35799 multiletter control sequences out of 15000+600000
  564647 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,1042b,458s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,806b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\tadej\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/tadej/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -681,10 +748,11 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/ta
 dej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
 sers/tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><C:/Users/tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmtt10.pfb>
-Output written on ZakljucnaNaloga.pdf (8 pages, 398732 bytes).
+m/cmsy8.pfb><C:/Users/tadej/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb>
+Output written on ZakljucnaNaloga.pdf (13 pages, 865076 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

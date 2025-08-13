@@ -83,7 +83,7 @@ A_{\text{lb}} \vec{x} \geq \vec{b}_{\text{lb}},
 \end{equation}
 kjer je $A_{\text{lb}}$ matrika velikosti (število tumorskih celic) × (število curkov), ki določa kateri jakosti žarkov se morata sešteti vsaj v vrednost, ki jo določa ustrezna komponenta $b_{lb}$. V našem primeru je $A$ dimenzij 15 × 13, vektor $\vec{b}_{\text{lb}}$ pa vsebuje petnajst enic — kritična doza v vsaki tumorski celici. Ker funkcija \texttt{scipy.optimize.linprog} podpira le zgornje meje, neenačbo pomnožimo z $-1$.
 
-\subsection{Maksimizacija doze v tumornem tkivu}
+\subsection{Maksimizacija doze v tumorskem tkivu}
 
 Drugi pristop je maksimizacija skupne doze v tumorskih celicah, ob pogoju, da v zdravih celicah ne presežemo kritične doze (v našem primeru vrednosti 1). V tem primeru vektor $\vec{c}$ vsebuje število tumorskih celic v posameznih vrsticah in stolpcih.
 
@@ -101,7 +101,13 @@ kjer je $A_{\text{ub}}$ matrika velikosti (število zdravih celic) × (število 
 
 \section{Model konstantnega curka}
 
-Na spodnjih dveh slikah si poglejmo rešitvi za obravnavan tumor. Tumor je na obeh slikah prikazan z črno obrobo in šrafuro. Doza, ki jo vsaka celica prejme je prikazana z gradientom rdeče barve. Prav tako je količina doze na vsaki celici zapisana z modro številko. Na sliki \ref{fig:doze_sevanja_1} vidimo rešitev dobljeno z minimizacijo doze v zdravem tkivu. Tumor je obsevan iz treh horizontalnih kanalov in dveh vertikalnih kanalov. Vse tumorne celice prejmejo višjo dozo sevanja kot je kritična doza. Nekaj zdravih celic prav tako prejme višjo dozo kot kritično dozo. Na sliki \ref{fig:doze_sevanja_2} pa vidimo rešitev dobljeno z maksimizacijo doze v tumorju. Vidimo, da v tem primeru tumorno tkivo prejme višjo dozo sevanja kot v prejšnjem primeru. A prav tako prejme večjo skupno dozo tudi zdravo tkivo. V tabeli \ref{tab:doze_sevanja} lahko vidimo skupno prejeto dozo in povprečno dozo na celicu v zdravem in tumornem tkivu pri obeh načinih reševanja linearnega problema.
+Na spodnjih dveh slikah sta prikazani rešitvi za obravnavani tumor. Tumor je na obeh slikah označen s črno obrobo in šrafuro. Doza, ki jo prejme posamezna celica, je prikazana z gradientom rdeče barve in zapisana z modro številko.
+
+Na sliki \ref{fig:doze_sevanja_1} je prikazana rešitev, dobljena z minimizacijo doze v zdravem tkivu. Tumor je obsevan iz treh horizontalnih in dveh vertikalnih kanalov. Vse tumorske celice prejmejo dozo, ki presega kritično vrednost, nekaj zdravih celic pa prav tako prejme višjo od kritične doze.
+
+Na sliki \ref{fig:doze_sevanja_2} je prikazana rešitev, dobljena z maksimizacijo doze v tumorju. V tem primeru tumorske celice prejmejo še višjo dozo sevanja kot v prvem primeru, vendar pa se poveča tudi skupna doza, ki jo prejme zdravo tkivo.
+
+V tabeli \ref{tab:doze_sevanja} so prikazane skupne prejete doze ter povprečne doze na celico v zdravem in tumorskem tkivu za oba obravnavana načina reševanja linearnega problema.
 
 \begin{figure}[h!]
 \centering
@@ -113,7 +119,7 @@ Na spodnjih dveh slikah si poglejmo rešitvi za obravnavan tumor. Tumor je na ob
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{doze_sevanja_2.png}
-\caption{Rešitev pridobljena z maksimizacijo doze sevanja v tumornem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\caption{Rešitev pridobljena z maksimizacijo doze sevanja v tumorskem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
 \label{fig:doze_sevanja_2}
 \end{figure}
 
@@ -121,7 +127,7 @@ Na spodnjih dveh slikah si poglejmo rešitvi za obravnavan tumor. Tumor je na ob
 \centering
 \begin{tabular}{c|c|c||c|c|}
 \cline{2-5}		
-		& \multicolumn{2}{c||}{Zdravo tkivo} & \multicolumn{2}{c|}{Tumorno tkivo} \\
+		& \multicolumn{2}{c||}{Zdravo tkivo} & \multicolumn{2}{c|}{Tumorsko tkivo} \\
 \cline{2-5}
 		& Skupna doza & Povprečna doza & Skupna doza & Povprečna doza \\
 \hline
@@ -129,26 +135,28 @@ Način 1	& 13 & 0,48 & 20 & 1,33 \\
 Način 2	& 19 & 0,70 & 25 & 1,67 \\
 \hline
 \end{tabular}
-\caption{Skupna in povprečna doza na celico v zdravem in tumornem tkivu pri minimizaciji doze v zdravem tkivu (Način 1) ter maksimizaciji doze v tumorju (Način 2).}
+\caption{Skupna in povprečna doza na celico v zdravem in tumorskem tkivu pri minimizaciji doze v zdravem tkivu (Način 1) ter maksimizaciji doze v tumorju (Način 2).}
 \label{tab:doze_sevanja}
 \end{table}
 
 \subsection{Porazdelitev doz sevanja v 15 celičnem tumorju}
 
-Obravnavani tumor je velikosti 15 celic in je določene oblike. Vprašajmo se kakšna je porazdelitev prejetih doz zdravih celic in tumornih celic pri tumorju velikemu 15 celic. Na sliki \ref{fig:nakljucni_tumorji} lahko vidimo nekaj naključno generiranih tumorjev velikosti 15 celic. Pri tej obravnavi zanemarjamo dejstvo, da se tumorne celice običajno držijo v skupku. Zaradi tega lahko pričakujemo višje doze v zdravem tkivu.
+Obravnavani tumor ima velikost 15 celic in določeno obliko. Vprašajmo se, kakšna je porazdelitev prejetih doz zdravih in tumorskih celic pri splošnem 15 celičnem tumorju. Na sliki \ref{fig:nakljucni_tumorji} je prikazanih nekaj naključno generiranih tumorjev velikosti 15 celic. Pri tej obravnavi zanemarimo dejstvo, da se tumorske celice običajno pojavljajo v skupkih, zaradi česar lahko pričakujemo nekoliko višje doze v zdravem tkivu.
+
+Omeniti velja tudi, da sem rešitve omejil na interval [0, 1]. V neomejenem intervalu bi namreč lahko naleteli na primere brez končne rešitve. Predstavljajmo si na primer tumor, ki popolnoma zapolni eno horizontalno vrstico. V načinu reševanja 2 bi v tem primeru moral skozi ustrezen kanal poslati neskončno količino sevanja. Prav tako bi lahko v načinu reševanja 1 imeli neskončno mnogo različnih rešitev.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\linewidth]{nakljucni_tumorji.png}
-\caption{Štirje naključni tumorji velikosti 15 celic. Tumorne celice so prikazane s črno barvo.}
+\caption{Štirje naključni tumorji velikosti 15 celic. Tumorske celice so prikazane s črno barvo.}
 \label{fig:nakljucni_tumorji}
 \end{figure}
 
-Na sliki \ref{fig:porazdelitev_doz_zdravih_celic} lahko vidimo porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti petnajst celic. Na grafu sta prikazana oba načina reševanja linearnega problema. Način 1 se nanaša na minimizacijo sevanja v zdravem tkivu, način 2 pa na maksimizacijo sevanja v tumornem tkivu. Na grafu vidimo, da v načinu 2 nobena zdrava celice ne prejme doze večje od kritične doze, kar je seveda določeno s pogojem. Na grafu sta desno zgoraj parv tako zapisani informaciji o tem kolikšna je povprečna prejeta doza zdrave celice v obeh načinih ter kolikšen delež celic prejme dozo, ki je nad kritično. Vidimo, da je kljub pogoju o tem, da zdrava celica ne sme prejeti doze večje od kritične doze, povprečna prejeta doza zdrave celice v načinu 2 večja kot v načinu ena. Prav tako prejme v načinu 2 več zdravih celic dozo, ki je večja ali enaka kritični dozi.
+Na sliki \ref{fig:porazdelitev_doz_zdravih_celic} je prikazana porazdelitev doz, ki jih prejmejo zdrave celice pri tisoč različnih tumorjih velikosti 15 celic. Prikazana sta oba načina reševanja linearnega problema. Način 1 se nanaša na minimizacijo sevanja v zdravem tkivu, način 2 pa na maksimizacijo sevanja v tumorskem tkivu. V načinu 2 nobena zdrava celica ne prejme doze, večje od kritične, kar je določeno s pogoji optimizacije. Desno zgoraj na grafu sta prikazana povprečna prejeta doza zdrave celice in delež celic, ki prejmejo dozo nad kritično. Opazimo, da je kljub omejitvi v načinu 2 povprečna prejeta doza zdrave celice višja kot v načinu 1, prav tako več zdravih celic prejme dozo enako ali večjo od kritične.
 
-Enako analizo lahko napravimo za tumorne celice. Na sliki \ref{fig:porazdelitev_doz_tumornih_celic} lahko vidimo porazdelitev doz, ki jih prejmejo tumorne celice v tisoč različnih tumorjih velikosti petnajst celic. Vidimo, da smo z načinom 1 obsevali vse tumorne celice z dozo večjo ali enako kritični dozi, medtem ko v načinu 2 to ni res. Nekaj tumornih celic ni bilo mogoče obsevati, ker bi s tem kršili dan pogoj. Zanimivo je tudi to, da so v povprečju pri načinu 2 tumorne celice prejele manj sevanja kot v načinu 1, čeprav v načinu 2 maksimiziramo dozo v tumornem tkivu. Kot kaže je pogoj pri načinu 2 precej strog. Na sliki \ref{fig:primer_tumorja} vidimo tumor pri katerem sta dve tumorni celici ostali neobsevani.
+Enako analizo lahko opravimo za tumorske celice (slika \ref{fig:porazdelitev_doz_tumornih_celic}). V načinu 1 so vse tumorske celice obsevane z dozo enako ali večjo od kritične, medtem ko v načinu 2 to ne drži – nekaj celic ostane neobsevanih, saj bi njihovo obsevanje povzročilo kršitev pogoja. Presenetljivo je, da so v povprečju tumorske celice v načinu 2 prejele manj sevanja kot v načinu 1, čeprav v načinu 2 optimizacija cilja na maksimalno dozo v tumorju. Pogoj pri načinu 2 se torej izkaže za precej strog. Na sliki \ref{fig:primer_tumorja} je prikazan primer tumorja, pri katerem sta dve tumorske celici ostali neobsevani.
 
-Zanimivo je omeniti še to, da smo v povprečju pri načinu 2 večkrat poslali curek skozi horizontalne kanale kot v načinu 1. V načinu 1 smo pa večkrat poslali curek skozi vertikalne kanale kot v načinu 2. Te vrednosti so prikazane v tabeli \ref{tab:kanali}. Z uporabo horizontalnih kanalov obsevamo več celic kot z uporabo vertikalnih kanalov. Zato več prispevajo k skupni dozi zdravega ali tumornega tkiva, vendar vseeno ne kršijo pogoja, ki ga imamo v načinu reševanja 2. To bi lahko bila razlaga za manjšo uporabo horizontalnih kanalov v načinu 1 ter večjo v načinu 2.
+Poleg tega analiza kaže, da smo v načinu 2 pogosteje uporabili horizontalne kanale, v načinu 1 pa vertikalne (tabela \ref{tab:kanali}). Ker horizontalni kanali običajno obsevajo več celic kot vertikalni, bolj prispevajo k skupni dozi tkiva, ne da bi kršili pogoj v načinu 2. To pojasni večjo uporabo horizontalnih kanalov pri načinu 2 in manjšo pri načinu 1.
 
 \begin{table}[h!]
 \centering
@@ -167,14 +175,14 @@ Način 2	& 3,357 & 2,420 & 5,777 \\
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_zdravih_celic.png}
-\caption{Porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumornem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_zdravih_celic}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_tumornih_celic.png}
-\caption{Porazdelitev doz, ki jih prejmejo tumorne celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumornem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo tumorske celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_tumornih_celic}
 \end{figure}
 
@@ -187,8 +195,119 @@ Način 2	& 3,357 & 2,420 & 5,777 \\
 
 \subsection{Obsevanost v odvisnosti od velikosti tumorja}
 
+Oglejmo si še delež celic, ki prejmejo dozo večjo ali enako kritični dozi ter povprečno prejeto dozo tumorskih in zdravih celic v odvisnosti od velikosti tumorja. Tako kot prej sem za vsako velikost tumorja generiral 1000 naključnih tumorjev. Na slikah \ref{fig:Zdrave_celice_povprecja_in_delezi} in \ref{fig:Tumorske_celice_povprecja_in_delezi} lahko vidimo povprečno dozo zdravih in tumorskih celic ter delež celic, ki prejmejo dozo večjo ali enako kritični dozi, v odvisnosti od velikosti tumorja.
+
+Najprej komentirajmo reševanje z načinom 1. Vidimo, da do velikosti približno 32 povprečna doza, ki jo prejme zdrava celica, in delež zdravih celic, ki prejmejo dozo večjo ali enako kritični dozi, naraščata. Nato pa oboje začne padati. Pri nekaterih vmesnih velikostih tumorja lahko opazimo, da kljub minimizaciji doze v zdravem tkivu povprečna zdrava celica prejme večjo dozo kot pri načinu reševanja 2. To izhaja iz omejitev v linearnem programu. Pri tumorskih celicah pri načinu reševanja 1 prav tako opazimo rast povprečne doze, ki jo prejme tumorska celica, v odvisnosti od velikosti tumorja. Rdeča črtkana črta pa ostaja konstantna na $100$\%, saj je to pogoj v linearnem programu.
+
+Rezultat glede povprečne doze, ki jo prejmejo zdrave celice, in ustreznega deleža me je presenetil, saj se krivulji prekrivata. Po razmisleku sem prišel do zaključka, da je to posledica omejitev v linearnem programu. V načinu reševanja 2 lahko zdrava celica prejme le dozo $0$ ali $1$. Tiste, ki prejmejo dozo $1$, enako prispevajo k povprečju in k deležu; tiste, ki prejmejo dozo $0$, pa sploh ne prispevajo. Posledično se krivulji prekrivata. Pri tumorskih celicah pa vidimo, da v precejšnjem območju obsevamo manj kot $90$\% tumorja. Povprečna doza, ki jo prejme tumorska celica, sprva strmo pade, nato pa spet narašča.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Zdrave_celice_povprecje_in_delezi.png}
+\caption{Povprečna prejeta doza zdrave celice (polni črti, leva skala) ter delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi (črtkani črti, desna skala) v odvisnosti od velikosti tumorja. Slika prikazuje rezultate z obema načinoma reševanja.}
+\label{fig:Zdrave_celice_povprecja_in_delezi}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Tumorske_celice_povprecje_in_delezi.png}
+\caption{Povprečna prejeta doza tumorske celice (polni črti, leva skala) ter delež tumorskih celic, ki prejme dozo večjo ali enako kritični dozi (črtkani črti, desna skala) v odvisnosti od velikosti tumorja. Slika prikazuje rezultate z obema načinoma reševanja.}
+\label{fig:Tumorske_celice_povprecja_in_delezi}
+\end{figure}
+
+\newpage
+
 \section{Model eksponentnega curka}
 
+Zgoraj smo predpostavili, da je žarek skozi tkivo konstanten. V resnici ima intenziteta žarka eksponentno padajoč profil
+
+\begin{equation}
+I(x) = I_0 e^{-\mu x},
+\end{equation}
+kjer je $I_0$ začetna intenziteta, $\mu$ pa koeficient, ki je odvisen od energije žarkov in od snovi, skozi katero potujejo. V radioterapiji je tipična vrednost $\mu \approx 0,05,\text{cm}^{-1}$. Recimo, da je vsaka celica v našem rastru velika $1\times 1$ cm. Doza, ki jo vsaka celica prejme, je še vedno linearno odvisna od jakosti žarkov:
+
+\begin{equation}
+D_{ij} = H_i e^{-j\mu} + V_j e^{-i\mu}.
+\end{equation}
+Ustrezno moramo z enakim eksponentnim faktorjem pomnožiti tudi komponente vektorja $\vec{c}$. Poleg tega omejimo rešitve na naslednji način: vertikalne rešitve omejimo na $[0, e^{5\mu}]$ in horizontalne na $[0, e^{6\mu}]$. S to omejitvijo je najmočnejši curek, ki ga lahko pošljemo skozi kanale, tak, da ima intenziteto 1 na zadnji celici, ki jo obseva.
+
+Na slikah \ref{fig:doze_sevanja_1_exp} in \ref{fig:doze_sevanja_2_exp} vidimo rešitvi, pridobljeni s prvim in drugim načinom reševanja. Opažamo, da je v primeru eksponentnega žarka prižganih več kanalov kot v primeru konstantnega žarka.
+
+V tabeli \ref{tab:doze_sevanja_exp} so prikazane skupna doza, ki jo prejmeta tkivi, ter povprečna doza na celico za oba načina reševanja. Podobno kot pri konstantnem žarku velja, da za dani tumor način reševanja 1 manj obseva obe tkivi, način 2 pa bolj. Pri načinu reševanja 1 moramo v primerjavi s konstantnim žarkom nekoliko bolj obsevati zdravo tkivo, da zadostimo pogoju o obsevanju tumorja; tumor pa je pri tem nekoliko manj obsevan. Pri načinu reševanja 2 pa moramo prav tako nekoliko manj obsevati tumor, da ustrežemo danemu pogoju.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=12cm]{doze_sevanja_1_exp.png}
+\caption{Rešitev pridobljena z načinom 1 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\label{fig:doze_sevanja_1_exp}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=12cm]{doze_sevanja_2_exp.png}
+\caption{Rešitev pridobljena z načinom 2 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\label{fig:doze_sevanja_2_exp}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c|c||c|c|}
+\cline{2-5}		
+		& \multicolumn{2}{c||}{Zdravo tkivo} & \multicolumn{2}{c|}{Tumorsko tkivo} \\
+\cline{2-5}
+		& Skupna doza & Povprečna doza & Skupna doza & Povprečna doza \\
+\hline
+Način 1	& 13,05 & 0,48 & 19,27 & 1,28 \\
+Način 2	& 17,79 & 0,66 & 22,41 & 1,49 \\
+\hline
+\end{tabular}
+\caption{Skupna in povprečna doza na celico v zdravem in tumorskem tkivu pri minimizaciji doze v zdravem tkivu (Način 1) ter maksimizaciji doze v tumorju (Način 2).}
+\label{tab:doze_sevanja_exp}
+\end{table}
+
+\subsection{Porazdelitev doz sevanja v 15 celičnem tumorju}
+
+Podobno kot pri konstantnem žarku si tudi tukaj oglejmo porazdelitev doz sevanja, ki ga prejmejo zdrave in tumorske celice. Na slikah \ref{fig:porazdelitev_doz_zdravih_celic_exp} in \ref{fig:porazdelitev_doz_tumornih_celic_exp} so prikazane porazdelitve doz za 1000 naključno generiranih tumorjev velikosti 15 celic. Opažamo, da so porazdelitve pri eksponentnem žarku bolj zanimive kot pri konstantnem, saj lahko celice prejmejo tudi neceloštevilske doze.
+
+Najprej komentirajmo način reševanja 1. Porazdelitev prejetih doz zdravih celic tvori tri skupke. Povprečna doza, ki jo prejme zdrava celica, je podobna kot pri konstantnem žarku, delež zdravih celic, ki prejmejo dozo večjo ali enako kritični, pa je občutno manjši. Pri tumorskih celicah pogoj zahteva, da vse prejmejo dozo večjo ali enako kritični dozi. Na histogramu se pojavi nekaj tumorskih celic z dozo manjšo od kritične, kar je posledica numerične natančnosti solverja. To sem upošteval pri izračunu, ne pa pri risanju histogramov. Povprečno tumorske celice prejmejo rahlo višjo dozo.
+
+Pri načinu reševanja 2 opazimo, da zdrave celice v povprečju prejmejo nekoliko manjšo dozo kot pri konstantnem žarku, delež zdravih celic, ki prejmejo dozo večjo ali enako kritični, pa je občutno manjši. Porazdelitev doze v tumorskih celicah tvori tri skupke, povprečna doza pa je nekoliko nižja kot pri konstantnem žarku. Delež tumorskih celic, ki prejmejo dozo večjo ali enako kritični, je prav tako občutno manjši kot pri konstantnem žarku.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Porazdelitev_doz_zdravih_celic_exp.png}
+\caption{Porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\label{fig:porazdelitev_doz_zdravih_celic_exp}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Porazdelitev_doz_tumornih_celic_exp.png}
+\caption{Porazdelitev doz, ki jih prejmejo tumorske celice v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\label{fig:porazdelitev_doz_tumornih_celic_exp}
+\end{figure}
+
+\subsection{Obsevanost v odvisnosti od velikosti tumorja}
+
+Podobno kot pri primeru konstantnega žarka si tudi tukaj oglejmo povprečno prejeto sevanje obeh tipov celic ter delež celic, ki prejmejo dozo večjo ali enako kritični dozi, v odvisnosti od velikosti tumorja. Na slikah \ref{fig:Zdrave_celice_povprecja_in_delezi_exp} in \ref{fig:Tumorske_celice_povprecja_in_delezi_exp} so prikazani ti grafi. Krivulje, ki prikazujejo povprečno prejeto dozo celic, so precej podobne tistim, ki smo jih dobili pri konstantnem žarku. Krivulje, ki prikazujejo delež celic z dozo večjo ali enako kritični, imajo sicer podobno obliko, a dosegajo nižje vrednosti.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Zdrave_celice_povprecje_in_delezi_exp.png}
+\caption{Povprečna prejeta doza zdrave celice (polni črti, leva skala) ter delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi (črtkani črti, desna skala) v odvisnosti od velikosti tumorja. Slika prikazuje rezultate z obema načinoma reševanja.}
+\label{fig:Zdrave_celice_povprecja_in_delezi_exp}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Tumorske_celice_povprecje_in_delezi_exp.png}
+\caption{Povprečna prejeta doza tumorske celice (polni črti, leva skala) ter delež tumorskih celic, ki prejme dozo večjo ali enako kritični dozi (črtkani črti, desna skala) v odvisnosti od velikosti tumorja. Slika prikazuje rezultate z obema načinoma reševanja.}
+\label{fig:Tumorske_celice_povprecja_in_delezi_exp}
+\end{figure}
+
 \section{Protonska terapija}
+
+
 
 \end{document}
