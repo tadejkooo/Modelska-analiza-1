@@ -3,10 +3,11 @@
 \contentsline {section}{\numberline {2}Uvod}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Minimizacija doze v zdravem tkivu}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Maksimizacija doze v tumorskem tkivu}{2}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Model konstantnega curka}{2}{section.3}%
+\contentsline {section}{\numberline {3}Model konstantnega žarka}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Porazdelitev doz sevanja v 15 celičnem tumorju}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Obsevanost v odvisnosti od velikosti tumorja}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Model eksponentnega curka}{8}{section.4}%
+\contentsline {section}{\numberline {4}Model eksponentnega žarka}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Porazdelitev doz sevanja v 15 celičnem tumorju}{8}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Obsevanost v odvisnosti od velikosti tumorja}{9}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Protonska terapija}{11}{section.5}%
+\contentsline {section}{\numberline {6}Zaključek}{13}{section.6}%

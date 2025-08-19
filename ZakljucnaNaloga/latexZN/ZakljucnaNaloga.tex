@@ -51,12 +51,12 @@ V duhu linearnega programiranja je tudi obratna formulacija (ki pa manj ustreza 
 
 \section{Uvod}
 
-Nalogo bomo rešili s pomočjo linearnega programiranja. To lahko storimo, ker je doza sevanja $D_{ij}$ v vsaki celici linearno odvisna od jakosti curkov. Doza, ki jo prejme posamezna celica, je enaka vsoti prispevkov horizontalnega in vertikalnega curka
+Nalogo bomo rešili s pomočjo linearnega programiranja. To lahko storimo, ker je doza sevanja $D_{ij}$ v vsaki celici linearno odvisna od jakosti žarkov. Doza, ki jo prejme posamezna celica, je enaka vsoti prispevkov horizontalnega in vertikalnega žarka
 
 \begin{equation}
 D_{ij} = H_i + V_j,
 \end{equation}
-kjer sta $H_i$ in $V_j$ jakosti curkov v $i$-tem horizontalnem oziroma $j$-tem vertikalnem kanalu. K postavitvi linearnega problema lahko pristopimo na dva načina, kot je opisano v navodilih naloge.
+kjer sta $H_i$ in $V_j$ jakosti žarkov v $i$-tem horizontalnem oziroma $j$-tem vertikalnem kanalu. K postavitvi linearnega problema lahko pristopimo na dva načina, kot je opisano v navodilih naloge.
 
 \subsection{Minimizacija doze v zdravem tkivu}
 
@@ -81,7 +81,7 @@ Pogoj, ki ga moramo upoštevati, je, da mora biti vsota prispevkov žarkov v tum
 \begin{equation}
 A_{\text{lb}} \vec{x} \geq \vec{b}_{\text{lb}},
 \end{equation}
-kjer je $A_{\text{lb}}$ matrika velikosti (število tumorskih celic) × (število curkov), ki določa kateri jakosti žarkov se morata sešteti vsaj v vrednost, ki jo določa ustrezna komponenta $b_{lb}$. V našem primeru je $A$ dimenzij 15 × 13, vektor $\vec{b}_{\text{lb}}$ pa vsebuje petnajst enic — kritična doza v vsaki tumorski celici. Ker funkcija \texttt{scipy.optimize.linprog} podpira le zgornje meje, neenačbo pomnožimo z $-1$.
+kjer je $A_{\text{lb}}$ matrika velikosti (število tumorskih celic) × (število žarkov), ki določa kateri jakosti žarkov se morata sešteti vsaj v vrednost, ki jo določa ustrezna komponenta $\vec{b}_{lb}$. V našem primeru je $A$ dimenzij 15 × 13, vektor $\vec{b}_{\text{lb}}$ pa vsebuje petnajst enic — kritična doza v vsaki tumorski celici. Ker funkcija \texttt{scipy.optimize.linprog} podpira le zgornje meje, neenačbo pomnožimo z $-1$.
 
 \subsection{Maksimizacija doze v tumorskem tkivu}
 
@@ -97,9 +97,9 @@ Pogoj za zdrave celice je
 \begin{equation}
 A_{\text{ub}} \vec{x} \leq \vec{b}_{\text{ub}},
 \end{equation}
-kjer je $A_{\text{ub}}$ matrika velikosti (število zdravih celic) × (število curkov), vektor $\vec{b}_{\text{ub}}$ pa vsebuje 27 enic — zgornjo mejo za prejeto dozo v vsaki zdravi celici. V našem primeru je matrika $A$ dimenzij 27 × 13.
+kjer je $A_{\text{ub}}$ matrika velikosti (število zdravih celic) × (število žarkov), vektor $\vec{b}_{\text{ub}}$ pa vsebuje 27 enic — zgornjo mejo za prejeto dozo v vsaki zdravi celici. V našem primeru je matrika $A$ dimenzij 27 × 13.
 
-\section{Model konstantnega curka}
+\section{Model konstantnega žarka}
 
 Na spodnjih dveh slikah sta prikazani rešitvi za obravnavani tumor. Tumor je na obeh slikah označen s črno obrobo in šrafuro. Doza, ki jo prejme posamezna celica, je prikazana z gradientom rdeče barve in zapisana z modro številko.
 
@@ -112,14 +112,14 @@ V tabeli \ref{tab:doze_sevanja} so prikazane skupne prejete doze ter povprečne 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{doze_sevanja_1.png}
-\caption{Rešitev pridobljena z minimizacijo doze sevanja v zdravem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\caption{Rešitev pridobljena z minimizacijo doze sevanja v zdravem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice, je prikazana z rdečo barvo in modrim napisom.}
 \label{fig:doze_sevanja_1}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{doze_sevanja_2.png}
-\caption{Rešitev pridobljena z maksimizacijo doze sevanja v tumorskem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\caption{Rešitev pridobljena z maksimizacijo doze sevanja v tumorskem tkivu. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice, je prikazana z rdečo barvo in modrim napisom.}
 \label{fig:doze_sevanja_2}
 \end{figure}
 
@@ -175,14 +175,14 @@ Način 2	& 3,357 & 2,420 & 5,777 \\
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_zdravih_celic.png}
-\caption{Porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo zdrave celice, v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanje z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_zdravih_celic}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_tumornih_celic.png}
-\caption{Porazdelitev doz, ki jih prejmejo tumorske celice v tisoč različnih tumorjih velikosti 15 celic.Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo tumorske celice, v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanje z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_tumornih_celic}
 \end{figure}
 
@@ -217,7 +217,7 @@ Rezultat glede povprečne doze, ki jo prejmejo zdrave celice, in ustreznega dele
 
 \newpage
 
-\section{Model eksponentnega curka}
+\section{Model eksponentnega žarka}
 
 Zgoraj smo predpostavili, da je žarek skozi tkivo konstanten. V resnici ima intenziteta žarka eksponentno padajoč profil
 
@@ -229,7 +229,7 @@ kjer je $I_0$ začetna intenziteta, $\mu$ pa koeficient, ki je odvisen od energi
 \begin{equation}
 D_{ij} = H_i e^{-j\mu} + V_j e^{-i\mu}.
 \end{equation}
-Ustrezno moramo z enakim eksponentnim faktorjem pomnožiti tudi komponente vektorja $\vec{c}$. Poleg tega omejimo rešitve na naslednji način: vertikalne rešitve omejimo na $[0, e^{5\mu}]$ in horizontalne na $[0, e^{6\mu}]$. S to omejitvijo je najmočnejši curek, ki ga lahko pošljemo skozi kanale, tak, da ima intenziteto 1 na zadnji celici, ki jo obseva.
+Za izračun komponent vektorja $\vec{c}$ sedaj prav tako seštejemo zdrave celice v vrstici oziroma stolpcu, vendar jih moramo pred seštetjem pomnožiti z ustreznim eksponentnim faktorjem. Na enak način moramo tudi pomnožiti elemente matrike $A$. Poleg tega omejimo rešitve na naslednji način: vertikalne rešitve omejimo na $[0, e^{5\mu}]$ in horizontalne na $[0, e^{6\mu}]$. S to omejitvijo je najmočnejši žarek, ki ga lahko pošljemo skozi kanale, tak, da ima intenziteto 1 na zadnji celici, ki jo obseva.
 
 Na slikah \ref{fig:doze_sevanja_1_exp} in \ref{fig:doze_sevanja_2_exp} vidimo rešitvi, pridobljeni s prvim in drugim načinom reševanja. Opažamo, da je v primeru eksponentnega žarka prižganih več kanalov kot v primeru konstantnega žarka.
 
@@ -239,14 +239,14 @@ V tabeli \ref{tab:doze_sevanja_exp} so prikazane skupna doza, ki jo prejmeta tki
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{doze_sevanja_1_exp.png}
-\caption{Rešitev pridobljena z načinom 1 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\caption{Rešitev pridobljena z načinom 1 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice, je prikazana z rdečo barvo in modrim napisom.}
 \label{fig:doze_sevanja_1_exp}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{doze_sevanja_2_exp.png}
-\caption{Rešitev pridobljena z načinom 2 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice je prikazana z rdečo barvo in modrim napisom.}
+\caption{Rešitev pridobljena z načinom 2 in eksponentnim žarkom. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice, je prikazana z rdečo barvo in modrim napisom.}
 \label{fig:doze_sevanja_2_exp}
 \end{figure}
 
@@ -277,14 +277,14 @@ Pri načinu reševanja 2 opazimo, da zdrave celice v povprečju prejmejo nekolik
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_zdravih_celic_exp.png}
-\caption{Porazdelitev doz, ki jih prejmejo zdrave celice v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo zdrave celice, v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanje z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_zdravih_celic_exp}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{Porazdelitev_doz_tumornih_celic_exp.png}
-\caption{Porazdelitev doz, ki jih prejmejo tumorske celice v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanja z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
+\caption{Porazdelitev doz, ki jih prejmejo tumorske celice, v tisoč različnih tumorjih velikosti 15 celic. Podana je tudi povprečna prejeta doza in delež tumornih celic, ki prejme dozo večjo ali enako kritični dozi v obeh načinih reševanja problema. Način 1 je reševanje z minimizacijo doze v zdravem tkivu in način 2 je reševanje z maksimizacijo doze v tumorskem tkivu.}
 \label{fig:porazdelitev_doz_tumornih_celic_exp}
 \end{figure}
 
@@ -308,6 +308,63 @@ Podobno kot pri primeru konstantnega žarka si tudi tukaj oglejmo povprečno pre
 
 \section{Protonska terapija}
 
+Pred koncem si oglejmo še zdravljenje našega obravnavanega tumorja s protonsko terapijo. Njena glavna prednost je možnost natančnega vplivanja na globino, na kateri se sprosti največja količina sevanja. Razpad protonov v snovi poteka po t. i. Braggovi krivulji, prikazani na sliki \ref{fig:Bragg_curve}. Položaj Braggovega vrha je odvisen od energije, ki jo nosijo protoni, zato lahko pri protonsko terapiji ta parameter ustrezno izberemo in s tem zagotovimo, da se največja količina energije sprosti prav v območju tumorja. Višja kot je energija protonov, globlje v tkivo se pomakne Braggov vrh.
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\linewidth]{bragg_curve.png}
+\caption{Braggove krivulje za nekaj različnih energij protonov. Lokacija Braggovega vrha je odvisna od energije protonov.}
+\label{fig:Bragg_curve}
+\end{figure}
+
+V vsakem kanalu lahko nastavljamo tako intenziteto žarkov kot tudi energijo protonov. Doza, ki jo prejme posamezna celica, je podana z izrazom
+
+\begin{equation}
+D_{ij} = H_i g(E_i, j) + V_j g(E_j, i),
+\end{equation}
+kjer je $g(E, k)$ Braggova krivulja, ki jo bomo v našem primeru aproksimirali z Gaussovo funkcijo širine ena
+
+\begin{equation}
+g(E, k) = \exp \left( \frac{1}{2}(k - E)^2 \right).
+\end{equation}
+Energija protonov $E$ določa položaj vrha Gaussove funkcije. 
+
+Opazimo, da je prejeto sevanje določene celice še vedno linearno odvisno od intenzitete žarka, ni pa linearno odvisno od energije protonov. Zaradi tega problema ne moremo rešiti z linearno minimizacijo, temveč se moramo poslužiti numerične minimizacije. Uporabili smo funkcijo \texttt{scipy.optimize.minimize}. Problem rešujemo po istem principu kot v načinu 1: minimiziramo dozo, ki jo prejme zdravo tkivo, ob pogoju, da vse tumorske celice prejmejo dozo, večjo ali enako kritični dozi. Dodatno vpeljemo še vez, da se vrh Gaussove funkcije nahaja na rastru. S tem omejimo možne energije.
+
+Na sliki \ref{fig:doze_sevanja_proton} je prikazana dobljena rešitev za obravnavani tumor pri protonsko terapiji. Vidimo, da so doze, ki jih prejmejo zdrave celice, precej manjše kot pri klasični radioterapiji. To je posledica globinskega fokusiranja žarka (Braggov vrh). Tumor pa je hkrati zelo učinkovito obsevan.
+
+V tabeli \ref{tab:doze_sevanja_proton} so prikazane skupne in povprečne doze na celico v zdravem in tumorskem tkivu. Rezultati kažejo, da so vrednosti za zdravo tkivo bistveno manjše kot pri radioterapiji, medtem ko so doze, ki jih prejme tumorsko tkivo, višje – kar je z vidika zdravljenja seveda zaželeno.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=12cm]{doze_sevanja_proton.png}
+\caption{Rešitev pridobljena z minimizacijo doze v zdravem tkivu ter z žarkom, ki ima obliko Gaussove funkcije. Tumor je obrobljen z črno in čez njega je šrafura. Doza, ki jo prejmejo posamezne celice, je prikazana z rdečo barvo in modrim napisom.}
+\label{fig:doze_sevanja_proton}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c|c||c|c|}
+\cline{2-5}		
+		& \multicolumn{2}{c||}{Zdravo tkivo} & \multicolumn{2}{c|}{Tumorsko tkivo} \\
+\cline{2-5}
+		& Skupna doza & Povprečna doza & Skupna doza & Povprečna doza \\
+\hline
+Protonska terapija	& 1,80 & 0,07 & 42,20 & 2,81 \\
+\hline
+\end{tabular}
+\caption{Skupna in povprečna doza na celico v zdravem in tumorskem tkivu pri protonski terapiji z minimizacijo doze v zdravem tkivu.}
+\label{tab:doze_sevanja_proton}
+\end{table}
+
+\section{Zaključek}
+
+V nalogi smo preučevali linearni model radioterapije in ga reševali na dva načina. V prvem načinu smo minimizirali dozo, ki jo prejme zdravo tkivo, ob pogoju, da mora vsaka tumorska celica prejeti dozo večjo ali enako kritični. V drugem načinu pa smo maksimizirali dozo v tumorju, ob pogoju, da nobena zdrava celica ne preseže kritične doze.
+
+Model smo preverili na primeru tumorja velikosti 15 celic. Linearni program smo reševali z dvema približkoma: s konstantnim žarkom in z eksponentno padajočim žarkom. Kot kažejo rezultati v tabelah \ref{tab:doze_sevanja} in \ref{tab:doze_sevanja_exp}, se statistične lastnosti obeh modelov ne razlikujejo bistveno, se pa razlike pokažejo pri različnih načinih reševanja. V načinu 2 namreč obe tkivi prejmeta večjo skupno dozo kot v načinu 1.
+
+V zadnjem delu smo obravnavani tumor obsevali tudi s protoni. Ker so lastnosti Braggove krivulje nelinearno odvisne od energije protonov, je bil to primer nelinearnege minimizacije in se v njega tudi nisem poglobil. Namen te razširitve je bil pokazati razliko med radioterapijo in protonsko terapijo. Kot vidimo v tabeli \ref{tab:doze_sevanja_proton}, zdravo tkivo v primeru protonov prejme bistveno manjšo dozo, medtem ko tumorsko tkivo prejme bistveno večjo. To potrjuje ključno prednost protonske terapije.
+
+Poleg podanega primera smo analizirali tudi porazdelitve doz v tisoč naključno generiranih 15-celičnih tumorjih. Videli smo, da je z eksponentnim žarkom delež zdravih celic, ki prejme dozo večjo ali enako kritični dozi manjši. Analizirali smo tudi povprečno dozo, ki jo celice prejmejo ter delež celic, ki prejme dozo večjo ali enako kritični dozi v odvisnosti od velikosti tumorja. Krivulje so bile podobne oblike, vendar je bil delež zdravih celic, ki prejmejo kritično dozo, občutno manjši pri modelu z eksponentnim žarkom kot pri modelu s konstantnim žarkom.
 
 \end{document}
